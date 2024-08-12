@@ -24,7 +24,7 @@ Repositório para um projeto que cria um cronômetro simples com horas, minutos,
 ## Desenvolvedor
 
 > [!NOTE]
-> **Mário Lúcio**\
-[LinkedIn](https://linkedin.com/in/marioluciofjr)\
-[Histórico no programa Google Expert](https://support.google.com/profile/119801043?sjid=9010980831254432834-SA)
+> ### **Mário Lúcio**
+> [LinkedIn](https://linkedin.com/in/marioluciofjr)\
+> [Histórico no programa Google Expert](https://support.google.com/profile/119801043?sjid=9010980831254432834-SA)
 
