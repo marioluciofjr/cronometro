@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .display {
+            font-size: 36px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .button-container button {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .button-container button:active {
+            background-color: #0056b3;
+        }
+        .button-container .reset-button {
+            background-color: #dc3545;
+        }
+        .button-container .reset-button:active {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="display" id="display">00:00:00.000</div>
+    <div class="button-container">
+        <button onclick="startChronometer()">Iniciar</button>
+        <button onclick="stopChronometer()">Parar</button>
+        <button class="reset-button" onclick="resetChronometer()">Resetar</button>
+    </div>
+
+    <script>
+        let chronometerInterval;
+        let chronometerMilliseconds = 0;
+
+        function formatTime(milliseconds) {
+            const hours = Math.floor(milliseconds / 3600000);
+            const minutes = Math.floor((milliseconds % 3600000) / 60000);
+            const seconds = Math.floor((milliseconds % 60000) / 1000);
+            const milli = milliseconds % 1000;
+            return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milli).padStart(3, '0')}`;
+        }
+
+        function updateDisplay() {
+            document.getElementById('display').innerText = formatTime(chronometerMilliseconds);
+        }
+
+        function startChronometer() {
+            chronometerInterval = setInterval(() => {
+                chronometerMilliseconds += 10;
+                updateDisplay();
+            }, 10);
+        }
+
+        function stopChronometer() {
+            clearInterval(chronometerInterval);
+        }
+
+        function resetChronometer() {
+            chronometerMilliseconds = 0;
+            updateDisplay();
+        }
+    </script>
+</body>
+</html>
