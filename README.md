@@ -8,7 +8,7 @@ Repositório para um projeto que cria um cronômetro simples com horas, minutos,
 2. Vá no menu Extensões e clique em Apps Script;
 3. Clique no ícone de + e depois em HTML, a fim de inserir o codigo [cronometro](https://github.com/marioluciofjr/cronometro/blob/main/cronometro.html);
 4. Salve o código HTML;
-5. Agora clique no ícone de + e depois em Script, a fim de inserir o código [code_cronos](https://github.com/marioluciofjr/cronometro/blob/main/code_cronos.gs);
+5. Agora clique no ícone de + e depois em Script, a fim de inserir o código [painel_cronometro](https://github.com/marioluciofjr/cronometro/blob/main/painel_cronometro.gs);
 6. Salve o código AppsScript;
 7. Atualize a planilha;
 8. Clique no menu personalizado "Cronômetro" e no submenu "Abrir Painel".
